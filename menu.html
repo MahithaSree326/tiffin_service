@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Menu</h1>
+    <ul>
+        {% for dish in dishes %}
+            <li>
+                {{ dish.name }} - ${{ dish.price }}<br>
+                <form method="POST" style="display:inline;">
+                    <input type="hidden" name="dish_id" value="{{ dish.id }}">
+                    <button type="submit">Order</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

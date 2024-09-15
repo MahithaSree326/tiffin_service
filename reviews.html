@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reviews</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Reviews</h1>
+    <form method="POST">
+        <select name="dish_id">
+            {% for dish in dishes %}
+                <option value="{{ dish.id }}">{{ dish.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="number" name="rating" min="1" max="5" placeholder="Rating" required>
+        <textarea name="comment" placeholder="Leave a comment"></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+    <h2>All Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+            <li>
+                <strong>{{ review.dish.name }} (Rating: {{ review.rating }})</strong>
+                <p>{{ review.comment }} - by {{ review.user.username }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

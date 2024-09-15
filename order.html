@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <p>Your order for {{ dish }} has been placed!</p>
+    <a class="btn" href="{{ url_for('menu') }}">Back to Menu</a>
+    <a class="btn" href="{{ url_for('home') }}">Back to Home</a>
+</body

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Tiffin Service Website!</h1>
+    <a class="btn" href="{{ url_for('login') }}">Login</a>
+    <a class="btn" href="{{ url_for('signup') }}">Signup</a>
+    <a class="btn" href="{{ url_for('menu') }}">Menu</a>
+    <a class="btn" href="{{ url_for('reviews') }}">Reviews</a>
+    <a class="btn" href="{{ url_for('profile') }}">Profile</a>
+</body>
+</html>
